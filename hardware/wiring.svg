@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" font-family="Helvetica, Arial, 'Hiragino Sans', 'Noto Sans JP', sans-serif">
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <text x="40" y="44" font-size="26" font-weight="bold" fill="#222">的当て名人 パチンコ型コントローラ 配線図</text>
+  <text x="40" y="70" font-size="14" fill="#555">Raspberry Pi Pico W ＋ MPU6050（I2C）＋ 曲げセンサ BS-85（ADC・分圧）  /  USBシリアルでPCへ</text>
+
+  <!-- PC -->
+  <rect x="40" y="300" width="150" height="90" rx="10" fill="#f3f3f3" stroke="#444" stroke-width="2"/>
+  <text x="115" y="338" font-size="16" text-anchor="middle" fill="#222">PC（Unity）</text>
+  <text x="115" y="362" font-size="12" text-anchor="middle" fill="#555">USBシリアル 115200</text>
+  <text x="115" y="378" font-size="12" text-anchor="middle" fill="#555">JSON 1行 / 50 Hz</text>
+  <line x1="190" y1="345" x2="330" y2="345" stroke="#444" stroke-width="3"/>
+  <text x="260" y="336" font-size="12" text-anchor="middle" fill="#444">USB-C ⇄ micro-USB</text>
+
+  <!-- Pico W -->
+  <rect x="330" y="120" width="260" height="470" rx="12" fill="#e8f4ec" stroke="#2c6e49" stroke-width="3"/>
+  <text x="460" y="150" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c6e49">Raspberry Pi Pico W</text>
+  <text x="460" y="170" font-size="12" text-anchor="middle" fill="#2c6e49">MicroPython 1.28.0</text>
+  <rect x="440" y="185" width="40" height="18" fill="#bbb" stroke="#666"/>
+  <text x="460" y="198" font-size="10" text-anchor="middle" fill="#222">USB</text>
+
+  <!-- left pins (used) -->
+  <g font-size="13" fill="#222">
+    <rect x="322" y="232" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="346" y="245">GP0（I2C0 SDA）Pin 1</text>
+    <rect x="322" y="262" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="346" y="275">GP1（I2C0 SCL）Pin 2</text>
+    <rect x="322" y="292" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="346" y="305">GND Pin 3</text>
+  </g>
+  <!-- right pins (used) -->
+  <g font-size="13" fill="#222">
+    <rect x="582" y="352" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="574" y="365" text-anchor="end">3V3(OUT) Pin 36</text>
+    <rect x="582" y="412" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="574" y="425" text-anchor="end">GND(AGND) Pin 33</text>
+    <rect x="582" y="472" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="574" y="485" text-anchor="end">GP26（ADC0）Pin 31</text>
+  </g>
+
+  <!-- MPU6050 -->
+  <rect x="60" y="440" width="200" height="200" rx="10" fill="#eef0ff" stroke="#3949ab" stroke-width="3"/>
+  <text x="160" y="468" font-size="16" font-weight="bold" text-anchor="middle" fill="#3949ab">MPU6050 モジュール</text>
+  <text x="160" y="486" font-size="11" text-anchor="middle" fill="#3949ab">GY-521 系 / I2Cアドレス 0x68</text>
+  <g font-size="13" fill="#222">
+    <rect x="252" y="502" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="244" y="515" text-anchor="end">VCC</text>
+    <rect x="252" y="532" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="244" y="545" text-anchor="end">GND</text>
+    <rect x="252" y="562" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="244" y="575" text-anchor="end">SCL</text>
+    <rect x="252" y="592" width="16" height="16" fill="#ffd54f" stroke="#666"/><text x="244" y="605" text-anchor="end">SDA</text>
+    <text x="70" y="630" font-size="11" fill="#555">AD0 は未接続または GND（= 0x68）</text>
+  </g>
+  <!-- MPU wires -->
+  <polyline points="268,600 300,600 300,240 322,240" fill="none" stroke="#1e88e5" stroke-width="2.5"/>
+  <polyline points="268,570 290,570 290,270 322,270" fill="none" stroke="#43a047" stroke-width="2.5"/>
+  <polyline points="268,540 280,540 280,300 322,300" fill="none" stroke="#222" stroke-width="2.5"/>
+  <polyline points="268,510 272,510 272,660 640,660 640,360 598,360" fill="none" stroke="#e53935" stroke-width="2.5"/>
+  <text x="305" y="440" font-size="11" fill="#1e88e5">SDA</text>
+  <text x="293" y="425" font-size="11" fill="#43a047">SCL</text>
+  <text x="282" y="410" font-size="11" fill="#222">GND</text>
+  <text x="455" y="675" font-size="11" fill="#e53935">VCC ← 3V3(OUT)</text>
+
+  <!-- Bend sensor divider -->
+  <rect x="760" y="120" width="400" height="470" rx="12" fill="#fff8e1" stroke="#ef6c00" stroke-width="3"/>
+  <text x="960" y="150" font-size="18" font-weight="bold" text-anchor="middle" fill="#ef6c00">曲げセンサ 分圧回路</text>
+  <text x="960" y="170" font-size="12" text-anchor="middle" fill="#ef6c00">センシアテクノロジー BS-85（平坦時 20 kΩ ±30%）</text>
+
+  <!-- 3V3 rail -->
+  <line x1="598" y1="360" x2="880" y2="360" stroke="#e53935" stroke-width="2.5"/>
+  <line x1="880" y1="360" x2="880" y2="230" stroke="#e53935" stroke-width="2.5"/>
+  <text x="700" y="352" font-size="12" fill="#e53935">3V3</text>
+  <!-- sensor symbol (variable resistor) -->
+  <rect x="860" y="230" width="40" height="110" fill="#b2ebf2" stroke="#00838f" stroke-width="2.5"/>
+  <line x1="850" y1="330" x2="910" y2="240" stroke="#00838f" stroke-width="2.5"/>
+  <polygon points="910,240 902,244 906,252" fill="#00838f"/>
+  <text x="915" y="270" font-size="14" fill="#00838f">BS-85 曲げセンサ</text>
+  <text x="915" y="290" font-size="12" fill="#00838f">外曲げで抵抗 ↑（最大約 +190%）</text>
+  <text x="915" y="308" font-size="12" fill="#00838f">センサ面を外側にして曲げる</text>
+  <line x1="880" y1="340" x2="880" y2="430" stroke="#222" stroke-width="2.5"/>
+  <circle cx="880" cy="385" r="4" fill="#222"/>
+  <!-- node to GP26 -->
+  <line x1="880" y1="385" x2="720" y2="385" stroke="#ff9800" stroke-width="2.5"/>
+  <line x1="720" y1="385" x2="720" y2="480" stroke="#ff9800" stroke-width="2.5"/>
+  <line x1="720" y1="480" x2="598" y2="480" stroke="#ff9800" stroke-width="2.5"/>
+  <text x="640" y="472" font-size="12" fill="#ef6c00">→ GP26 (ADC0)</text>
+  <text x="895" y="390" font-size="12" fill="#222">中点（静止時 約1.1 V）</text>
+  <!-- resistor -->
+  <rect x="860" y="430" width="40" height="90" fill="#fff" stroke="#222" stroke-width="2.5"/>
+  <text x="915" y="470" font-size="14" fill="#222">R = 10 kΩ（1/4 W, ±1%）</text>
+  <text x="915" y="490" font-size="12" fill="#555">カラーコード 茶・黒・黒・赤・茶</text>
+  <line x1="880" y1="520" x2="880" y2="560" stroke="#222" stroke-width="2.5"/>
+  <!-- GND -->
+  <line x1="880" y1="560" x2="660" y2="560" stroke="#222" stroke-width="2.5"/>
+  <line x1="660" y1="560" x2="660" y2="420" stroke="#222" stroke-width="2.5"/>
+  <line x1="660" y1="420" x2="598" y2="420" stroke="#222" stroke-width="2.5"/>
+  <line x1="865" y1="560" x2="895" y2="560" stroke="#222" stroke-width="3"/>
+  <line x1="871" y1="567" x2="889" y2="567" stroke="#222" stroke-width="3"/>
+  <line x1="877" y1="574" x2="883" y2="574" stroke="#222" stroke-width="3"/>
+  <text x="700" y="552" font-size="12" fill="#222">GND</text>
+
+  <!-- notes -->
+  <g font-size="12" fill="#333">
+    <text x="40" y="700">ADC値 read_u16(): 静止時 約22,000〜23,000 → ゴムを引く（センサ外曲げ）ほど低下（約13,000〜15,000、TGS版の閾値下限 10,000）。  I2C は 400 kHz。</text>
+  </g>
+</svg>
